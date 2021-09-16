@@ -31,16 +31,16 @@ struct LogInView: View {
                             await sessionManger.signIn(username: username, password: password)
                         }
                     }, label: {
-                        Text("Sign In").foregroundColor(.white).frame(maxWidth: .infinity, maxHeight: 25).padding(8).background(Color.blue).cornerRadius(10)
+                        Text("Sign In").fontWeight(.bold).foregroundColor(.white).frame(maxWidth: .infinity, maxHeight: 25).padding(8).background(Color.blue).cornerRadius(10)
                     })
                     Divider()
                     Button(action: {}, label: {
-                        Text("Create New Account").foregroundColor(.white).frame(maxWidth: .infinity, maxHeight: 25).padding(8).background(Color.green).cornerRadius(10)
+                        Text("Create New Account").fontWeight(.bold).foregroundColor(.white).frame(maxWidth: .infinity, maxHeight: 25).padding(8).background(Color.green).cornerRadius(10)
                     })
                     
                 
                 }.padding().background(.thinMaterial).cornerRadius(14).shadow(radius: 5).padding()
-            }.font(.system(size: 14 , weight: .bold, design: .default)).padding()
+            }.padding()
         }
     }
 }

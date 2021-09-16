@@ -12,6 +12,8 @@ struct EntryView: View {
     @EnvironmentObject var sessionManger: SessionManager
     var body: some View {
         switch sessionManger.sessionStatus {
+        case .loading:
+            LoadingView()
         case .signedIn:
             ContentView()
         case .logIn:

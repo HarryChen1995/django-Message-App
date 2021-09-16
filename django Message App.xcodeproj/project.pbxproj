@@ -11,6 +11,7 @@
 		31014D5A26EFC2E400569F65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31014D5926EFC2E400569F65 /* ContentView.swift */; };
 		31014D5C26EFC2E500569F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31014D5B26EFC2E500569F65 /* Assets.xcassets */; };
 		31014D5F26EFC2E500569F65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31014D5E26EFC2E500569F65 /* Preview Assets.xcassets */; };
+		318099EC26F3B5FB00B88C34 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318099EB26F3B5FB00B88C34 /* LoadingView.swift */; };
 		31848D6726F2541400CF2BD7 /* SessionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31848D6626F2541400CF2BD7 /* SessionAPI.swift */; };
 		31848D6926F2589800CF2BD7 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31848D6826F2589800CF2BD7 /* Token.swift */; };
 		31848D6B26F26E5D00CF2BD7 /* TokenKeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31848D6A26F26E5C00CF2BD7 /* TokenKeyChainHelper.swift */; };
@@ -26,6 +27,7 @@
 		31014D5926EFC2E400569F65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		31014D5B26EFC2E500569F65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31014D5E26EFC2E500569F65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		318099EB26F3B5FB00B88C34 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		31848D6626F2541400CF2BD7 /* SessionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAPI.swift; sourceTree = "<group>"; };
 		31848D6826F2589800CF2BD7 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		31848D6A26F26E5C00CF2BD7 /* TokenKeyChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenKeyChainHelper.swift; sourceTree = "<group>"; };
@@ -66,12 +68,13 @@
 		31014D5626EFC2E400569F65 /* django Message App */ = {
 			isa = PBXGroup;
 			children = (
-				31848D6C26F26E6A00CF2BD7 /* Helper */,
 				31F4791D26F1060200C97627 /* django-Message-App-Info.plist */,
+				31848D6C26F26E6A00CF2BD7 /* Helper */,
 				3194462A26F0FAC6002D2871 /* Model */,
 				318B5FD526EFC39D003A5006 /* API */,
 				31014D5726EFC2E400569F65 /* django_Message_AppApp.swift */,
 				318B5FD626EFC3C6003A5006 /* SessionManager.swift */,
+				318099EB26F3B5FB00B88C34 /* LoadingView.swift */,
 				3194462D26F0FC68002D2871 /* LogInView.swift */,
 				31014D5926EFC2E400569F65 /* ContentView.swift */,
 				31F4791B26F1041400C97627 /* EntryView.swift */,
@@ -187,6 +190,7 @@
 				31848D6726F2541400CF2BD7 /* SessionAPI.swift in Sources */,
 				31848D6B26F26E5D00CF2BD7 /* TokenKeyChainHelper.swift in Sources */,
 				3194462E26F0FC68002D2871 /* LogInView.swift in Sources */,
+				318099EC26F3B5FB00B88C34 /* LoadingView.swift in Sources */,
 				3194462C26F0FAE7002D2871 /* User.swift in Sources */,
 				318B5FD726EFC3C6003A5006 /* SessionManager.swift in Sources */,
 				31014D5A26EFC2E400569F65 /* ContentView.swift in Sources */,
@@ -329,7 +333,6 @@
 				INFOPLIST_FILE = "django-Message-App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -360,7 +363,6 @@
 				INFOPLIST_FILE = "django-Message-App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
