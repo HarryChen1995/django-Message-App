@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 15.0, *)
 struct EntryView: View {
     @EnvironmentObject var sessionManger: SessionManager
     var body: some View {

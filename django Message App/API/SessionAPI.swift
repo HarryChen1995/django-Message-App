@@ -38,7 +38,7 @@ extension HTTPURLResponse {
     }
 }
 
-@available(iOS 15.0.0, *)
+
 @MainActor
 class DjangoAPI {
     
@@ -56,7 +56,7 @@ class DjangoAPI {
             }
             let user = try? JSONDecoder().decode(User.self, from: data)
             return .success(user)
-
+            
             
         }
         catch( let error) {
@@ -66,9 +66,25 @@ class DjangoAPI {
         return .failure(.RefusedConnectionError)
     }
     
-    
+    static func checkSignIn() async -> Bool {
+        
+        do {
+            let url = URL(string: urlbase + "/auth/checklogin")
+            let (_, response) = try await URLSession.shared.data(from: url!)
+            if let _ = HTTPURLResponse.getAPIErrorFromResponse(response: response) {
+                return false
+            }
+            return true
+        }
+        catch(let error){
+            print(error.localizedDescription)
+        }
+        
+        return false
+        
+    }
     static func signIn(username:String, password:String) async -> Result<Token, APIError>{
-        let url = URL(string: urlbase + "/auth/")
+        let url = URL(string: urlbase + "/auth")
         var request = URLRequest(url: url!)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
@@ -84,9 +100,9 @@ class DjangoAPI {
             let token = try! JSONDecoder().decode(Token.self, from: data)
             UserDefaults.standard.set(username, forKey: "username")
             return .success(token)
-
-                
-            }
+            
+            
+        }
         catch( let error) {
             print(error.localizedDescription)
         }

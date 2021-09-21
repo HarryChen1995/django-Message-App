@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(iOS 15.0, *)
+
 struct LogInView: View {
     @State var username = ""
     @State var password = ""
@@ -45,7 +45,6 @@ struct LogInView: View {
     }
 }
 
-@available(iOS 15.0, *)
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
         LogInView().environmentObject(SessionManager()).previewInterfaceOrientation(.portrait)

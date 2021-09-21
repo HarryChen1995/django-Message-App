@@ -18,32 +18,25 @@ enum SessionStatus {
 
 
 
-@available(iOS 15.0.0, *)
 @MainActor
 class SessionManager: ObservableObject {
     
     @Published var sessionStatus: SessionStatus = .loading
     @Published var user:User?
     
-
+    
     init(){
-       
-        if let username = UserDefaults.standard.string(forKey: "username"),  let access_token =  TokenKeyChainHelper.retrieveToken(tokenType: .accessToken, username: username) {
+        
+        if let _ = UserDefaults.standard.string(forKey: "username") {
             Task {
-                let result = await DjangoAPI.getUserInfo(access_token: access_token)
-                
-                switch result {
-                case .failure(_):
-                    sessionStatus = .logIn
-                case .success(let session_user):
-                    user  = session_user
+                let isSignedIn = await DjangoAPI.checkSignIn()
+                if isSignedIn {
                     sessionStatus = .signedIn
                 }
             }
         }
-        else {
-            sessionStatus = .logIn
-        }
+        sessionStatus = .logIn
+        
     }
     
     func signIn(username:String , password:String) async {
@@ -59,8 +52,8 @@ class SessionManager: ObservableObject {
             TokenKeyChainHelper.saveTokenIntoKeyChain(token: token.refresh, tokenType: .refreshToken, username: username)
             sessionStatus = .signedIn
         }
-     
+        
     }
-
+    
 }
 

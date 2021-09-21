@@ -8,7 +8,6 @@
 import SwiftUI
 
 
-@available(iOS 15.0, *)
 @main
 struct django_Message_AppApp: App {
     var body: some Scene {
