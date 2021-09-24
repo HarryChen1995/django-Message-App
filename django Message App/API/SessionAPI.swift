@@ -112,4 +112,22 @@ class DjangoAPI {
     }
     
     
+    static func signOut() async -> Bool {
+        let url = URL(string: urlbase + "/auth/logout")
+        let request = URLRequest(url: url!)
+        do {
+            let ( _ , response) = try await URLSession.shared.data(for: request)
+            if let _ = HTTPURLResponse.getAPIErrorFromResponse(response: response){
+                return false
+            }
+        }
+        catch(let error){
+            print(error.localizedDescription)
+            return false
+        }
+        
+        return true
+    }
+    
+    
 }
