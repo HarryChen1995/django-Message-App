@@ -9,6 +9,8 @@
 	</dict>
 	<key>UILaunchScreen</key>
 	<dict>
+		<key>UIImageName</key>
+		<string>django_logo</string>
 		<key>UIColorName</key>
 		<string>Color</string>
 	</dict>

@@ -11,7 +11,7 @@ struct LoadingView: View {
     var body: some View {
         ZStack{
             LinearGradient(colors: [Color.purple, Color.green , Color .blue], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
-            Image("django").resizable().frame(width: 200, height: 80).cornerRadius(7).shadow(radius: 5)
+            ProgressView().progressViewStyle(.circular).tint(.white)
         }
     }
 }

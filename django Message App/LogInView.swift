@@ -34,7 +34,9 @@ struct LogInView: View {
                         Text("Sign In").fontWeight(.bold).foregroundColor(.white).frame(maxWidth: .infinity, maxHeight: 25).padding(8).background(Color.blue).cornerRadius(10)
                     })
                     Divider()
-                    Button(action: {}, label: {
+                    Button(action: {
+            
+                    }, label: {
                         Text("Create New Account").fontWeight(.bold).foregroundColor(.white).frame(maxWidth: .infinity, maxHeight: 25).padding(8).background(Color.green).cornerRadius(10)
                     })
                     

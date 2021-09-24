@@ -9,7 +9,6 @@ import SwiftUI
 
 enum SessionStatus {
     case signedIn
-    case signedOut
     case signup
     case logIn
     case loading
@@ -51,6 +50,19 @@ class SessionManager: ObservableObject {
             TokenKeyChainHelper.saveTokenIntoKeyChain(token: token.access, tokenType: .accessToken, username: username)
             TokenKeyChainHelper.saveTokenIntoKeyChain(token: token.refresh, tokenType: .refreshToken, username: username)
             sessionStatus = .signedIn
+        }
+        
+    }
+    
+    func signOut() async {
+        let signoutStatus = await DjangoAPI.signOut();
+        if signoutStatus {
+            guard let username = UserDefaults.standard.string(forKey: "username") else {
+                return
+            }
+            TokenKeyChainHelper.deleteToken(tokenType: .accessToken, username: username)
+            TokenKeyChainHelper.deleteToken(tokenType: .refreshToken, username: username)
+            sessionStatus = .logIn
         }
         
     }

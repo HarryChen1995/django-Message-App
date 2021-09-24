@@ -9,13 +9,19 @@ import SwiftUI
 
 
 struct ContentView: View {
+    @EnvironmentObject var sessionManger:SessionManager
     var body: some View {
         NavigationView {
             ScrollView{
                 VStack{
                     Text("Hello, world!")
                         .padding().toolbar{
-                            Button(action: {}){
+                            Button(action: {
+                                let _ = Task {
+                                    await sessionManger.signOut()
+                                }
+                                
+                            }){
                                 Text("Logout").font(.system(size: 14)).fontWeight(.bold).padding(6).background(.blue).clipShape(Capsule())
                             }.tint(.white)
                             
