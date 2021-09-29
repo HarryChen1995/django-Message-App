@@ -22,7 +22,7 @@ class SessionManager: ObservableObject {
     
     @Published var sessionStatus: SessionStatus = .loading
     @Published var user:User?
-    
+    @Published var error:APIError?
     
     init(){
         
@@ -43,12 +43,14 @@ class SessionManager: ObservableObject {
         
         let result = await DjangoAPI.signIn(username: username, password: password)
         switch result {
-        case .failure(_):
+        case .failure(let apiError):
             sessionStatus = .logIn
+            error = apiError
         case .success(let token):
             UserDefaults.standard.set(username, forKey: "username")
             TokenKeyChainHelper.saveTokenIntoKeyChain(token: token.access, tokenType: .accessToken, username: username)
             TokenKeyChainHelper.saveTokenIntoKeyChain(token: token.refresh, tokenType: .refreshToken, username: username)
+            error = nil
             sessionStatus = .signedIn
         }
         

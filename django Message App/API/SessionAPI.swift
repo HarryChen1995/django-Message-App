@@ -14,6 +14,7 @@ enum APIError:Error {
     case RefusedConnectionError
     case NotFoundError
     case InternalSeverError
+    
 }
 
 

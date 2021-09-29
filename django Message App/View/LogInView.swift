@@ -11,21 +11,27 @@ import SwiftUI
 struct LogInView: View {
     @State var username = ""
     @State var password = ""
+    @State var showSignUpSheet = false
     @EnvironmentObject var sessionManger:SessionManager
     var body: some View {
         ZStack{
-            LinearGradient(colors: [Color.purple, Color.green , Color .blue], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
+            LinearGradient(colors: [Color.purple, Color.green , Color .blue], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea().onTapGesture {
+                UIApplication.shared.hideKeyBoard()
+            }
             VStack {
                 Image("django").resizable().frame(width: 200, height: 80).cornerRadius(7).shadow(radius: 5).offset( y: -10)
                 VStack{
                     
-           
-                    TextField("UserName", text: $username, prompt: Text("User Name")).textFieldStyle(.roundedBorder).padding(.bottom, 3)
+                    if sessionManger.error == nil {
+                    TextField("UserName", text: $username, prompt: Text("User Name")).modifier(ValidTextFieldModifer())
                   
-                  
-                    SecureField("Password", text: $password, prompt: Text("Password")).textFieldStyle(.roundedBorder).padding(.bottom, 3)
-                   
-                    
+                    SecureField("Password", text: $password, prompt: Text("Password")).modifier(ValidTextFieldModifer())
+                    }
+                    else {
+                        TextField("UserName", text: $username, prompt: Text("User Name")).modifier(InValidTextFieldModifer())
+                      
+                        SecureField("Password", text: $password, prompt: Text("Password")).modifier(InValidTextFieldModifer())
+                    }
                     Button(action: {
                         let _ = Task {
                             await sessionManger.signIn(username: username, password: password)
@@ -35,10 +41,10 @@ struct LogInView: View {
                     })
                     Divider()
                     Button(action: {
-            
+                        showSignUpSheet.toggle()
                     }, label: {
                         Text("Create New Account").fontWeight(.bold).foregroundColor(.white).frame(maxWidth: .infinity, maxHeight: 25).padding(8).background(Color.green).cornerRadius(10)
-                    })
+                    }).sheet(isPresented: $showSignUpSheet, content: SignUpView.init)
                     
                 
                 }.padding().background(.thinMaterial).cornerRadius(14).shadow(radius: 5).padding()
@@ -52,3 +58,4 @@ struct LogInView_Previews: PreviewProvider {
         LogInView().environmentObject(SessionManager()).previewInterfaceOrientation(.portrait)
     }
 }
+
