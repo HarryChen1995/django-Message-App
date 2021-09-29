@@ -7,15 +7,23 @@
 
 import SwiftUI
 
-struct InValidTextFieldModifer: ViewModifier {
-    func body(content: Content) -> some View {
-        return content.textFieldStyle(.roundedBorder).overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.red,lineWidth: 2 )).padding(.bottom, 3)
+extension View {
+    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+        if condition {
+            transform(self)
+        } else {
+            self
+        }
     }
 }
 
-struct ValidTextFieldModifer: ViewModifier {
-    func body(content: Content) -> some View {
-        return content.textFieldStyle(.roundedBorder).padding(.bottom, 3)
+
+extension View {
+    func customTextFieldModifer(error: APIError?) -> some View{
+        self.textFieldStyle(.roundedBorder).if(error != nil){
+            view in
+            view.overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.red,lineWidth: 2 ))
+        }.padding(.bottom, 3)
     }
 }
 

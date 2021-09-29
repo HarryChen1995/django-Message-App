@@ -22,16 +22,12 @@ struct LogInView: View {
                 Image("django").resizable().frame(width: 200, height: 80).cornerRadius(7).shadow(radius: 5).offset( y: -10)
                 VStack{
                     
-                    if sessionManger.error == nil {
-                    TextField("UserName", text: $username, prompt: Text("User Name")).modifier(ValidTextFieldModifer())
+            
+                    TextField("UserName", text: $username, prompt: Text("User Name")).modifier(ValidTextFieldModifer()).customTextFieldModifer(error: sessionManger.error)
                   
-                    SecureField("Password", text: $password, prompt: Text("Password")).modifier(ValidTextFieldModifer())
-                    }
-                    else {
-                        TextField("UserName", text: $username, prompt: Text("User Name")).modifier(InValidTextFieldModifer())
-                      
-                        SecureField("Password", text: $password, prompt: Text("Password")).modifier(InValidTextFieldModifer())
-                    }
+                    SecureField("Password", text: $password, prompt: Text("Password")).modifier(ValidTextFieldModifer()).customTextFieldModifer(error: sessionManger.error)
+                
+                    
                     Button(action: {
                         let _ = Task {
                             await sessionManger.signIn(username: username, password: password)
