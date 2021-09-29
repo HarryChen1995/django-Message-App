@@ -39,7 +39,6 @@ extension HTTPURLResponse {
 }
 
 
-@MainActor
 class DjangoAPI {
     
     static func getUserInfo(access_token:String) async -> Result<User?, APIError>{
