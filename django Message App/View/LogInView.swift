@@ -23,9 +23,9 @@ struct LogInView: View {
                 VStack{
                     
             
-                    TextField("UserName", text: $username, prompt: Text("User Name")).modifier(ValidTextFieldModifer()).customTextFieldModifer(error: sessionManger.error)
+                    TextField("UserName", text: $username, prompt: Text("User Name")).customTextFieldModifer(error: sessionManger.error)
                   
-                    SecureField("Password", text: $password, prompt: Text("Password")).modifier(ValidTextFieldModifer()).customTextFieldModifer(error: sessionManger.error)
+                    SecureField("Password", text: $password, prompt: Text("Password")).customTextFieldModifer(error: sessionManger.error)
                 
                     
                     Button(action: {
