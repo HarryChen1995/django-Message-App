@@ -11,6 +11,7 @@
 		31014D5A26EFC2E400569F65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31014D5926EFC2E400569F65 /* ContentView.swift */; };
 		31014D5C26EFC2E500569F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31014D5B26EFC2E500569F65 /* Assets.xcassets */; };
 		31014D5F26EFC2E500569F65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31014D5E26EFC2E500569F65 /* Preview Assets.xcassets */; };
+		313E3C11273A0D3C00AEF6B6 /* django_Message_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313E3C10273A0D3C00AEF6B6 /* django_Message_AppTests.swift */; };
 		315655AD2704DE06008B2E85 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315655AC2704DE06008B2E85 /* ViewHelper.swift */; };
 		315655B02704E448008B2E85 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315655AF2704E448008B2E85 /* SignUpView.swift */; };
 		318099EC26F3B5FB00B88C34 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318099EB26F3B5FB00B88C34 /* LoadingView.swift */; };
@@ -23,12 +24,24 @@
 		31F4791C26F1041400C97627 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4791B26F1041400C97627 /* EntryView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		313E3C12273A0D3C00AEF6B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31014D4C26EFC2E400569F65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31014D5326EFC2E400569F65;
+			remoteInfo = "django Message App";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		31014D5426EFC2E400569F65 /* django Message App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "django Message App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31014D5726EFC2E400569F65 /* django_Message_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = django_Message_AppApp.swift; sourceTree = "<group>"; };
 		31014D5926EFC2E400569F65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		31014D5B26EFC2E500569F65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31014D5E26EFC2E500569F65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		313E3C0E273A0D3C00AEF6B6 /* django Message AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "django Message AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		313E3C10273A0D3C00AEF6B6 /* django_Message_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = django_Message_AppTests.swift; sourceTree = "<group>"; };
 		315655AC2704DE06008B2E85 /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
 		315655AF2704E448008B2E85 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		318099EB26F3B5FB00B88C34 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -50,6 +63,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		313E3C0B273A0D3C00AEF6B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				31014D5626EFC2E400569F65 /* django Message App */,
+				313E3C0F273A0D3C00AEF6B6 /* django Message AppTests */,
 				31014D5526EFC2E400569F65 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				31014D5426EFC2E400569F65 /* django Message App.app */,
+				313E3C0E273A0D3C00AEF6B6 /* django Message AppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,6 +113,14 @@
 				31014D5E26EFC2E500569F65 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		313E3C0F273A0D3C00AEF6B6 /* django Message AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				313E3C10273A0D3C00AEF6B6 /* django_Message_AppTests.swift */,
+			);
+			path = "django Message AppTests";
 			sourceTree = "<group>";
 		};
 		315655AE2704E370008B2E85 /* View */ = {
@@ -151,6 +181,24 @@
 			productReference = 31014D5426EFC2E400569F65 /* django Message App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		313E3C0D273A0D3C00AEF6B6 /* django Message AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 313E3C16273A0D3C00AEF6B6 /* Build configuration list for PBXNativeTarget "django Message AppTests" */;
+			buildPhases = (
+				313E3C0A273A0D3C00AEF6B6 /* Sources */,
+				313E3C0B273A0D3C00AEF6B6 /* Frameworks */,
+				313E3C0C273A0D3C00AEF6B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				313E3C13273A0D3C00AEF6B6 /* PBXTargetDependency */,
+			);
+			name = "django Message AppTests";
+			productName = "django Message AppTests";
+			productReference = 313E3C0E273A0D3C00AEF6B6 /* django Message AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,11 +206,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					31014D5326EFC2E400569F65 = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					313E3C0D273A0D3C00AEF6B6 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 31014D5326EFC2E400569F65;
 					};
 				};
 			};
@@ -180,6 +232,7 @@
 			projectRoot = "";
 			targets = (
 				31014D5326EFC2E400569F65 /* django Message App */,
+				313E3C0D273A0D3C00AEF6B6 /* django Message AppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -191,6 +244,13 @@
 			files = (
 				31014D5F26EFC2E500569F65 /* Preview Assets.xcassets in Resources */,
 				31014D5C26EFC2E500569F65 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		313E3C0C273A0D3C00AEF6B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +276,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		313E3C0A273A0D3C00AEF6B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				313E3C11273A0D3C00AEF6B6 /* django_Message_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		313E3C13273A0D3C00AEF6B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31014D5326EFC2E400569F65 /* django Message App */;
+			targetProxy = 313E3C12273A0D3C00AEF6B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		31014D6026EFC2E500569F65 /* Debug */ = {
@@ -397,6 +473,52 @@
 			};
 			name = Release;
 		};
+		313E3C14273A0D3C00AEF6B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 98BMUDV2YN;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.django-Message-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/django Message App.app/django Message App";
+			};
+			name = Debug;
+		};
+		313E3C15273A0D3C00AEF6B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 98BMUDV2YN;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.django-Message-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/django Message App.app/django Message App";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -414,6 +536,15 @@
 			buildConfigurations = (
 				31014D6326EFC2E500569F65 /* Debug */,
 				31014D6426EFC2E500569F65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		313E3C16273A0D3C00AEF6B6 /* Build configuration list for PBXNativeTarget "django Message AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				313E3C14273A0D3C00AEF6B6 /* Debug */,
+				313E3C15273A0D3C00AEF6B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
