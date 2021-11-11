@@ -14,7 +14,7 @@ struct ContentView: View {
         NavigationView {
             ScrollView{
                 VStack{
-                    Text("Hello, world!")
+                    Text("You are logged in !")
                         .padding().toolbar{
                             Button(action: {
                                 let _ = Task {

@@ -38,6 +38,16 @@
                ReferencedContainer = "container:django Message App.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "311C00D3273D83C3005B5AB9"
+               BuildableName = "django Message AppUITests.xctest"
+               BlueprintName = "django Message AppUITests"
+               ReferencedContainer = "container:django Message App.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
